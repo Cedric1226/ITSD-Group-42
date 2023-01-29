@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="itsd-dt2022-template_8335" />
+    <profile name="sbt 1" modules="cardgame_3147" />
     <profile name="sbt 2" modules="ITSD Card Game">
       <option name="deprecationWarnings" value="true" />
       <option name="uncheckedWarnings" value="true" />

@@ -13,7 +13,7 @@
         <entry key="root">
           <value>
             <ProjectSettingsEntry>
-              <option name="confDir" value="C:\Users\24956\Desktop\ITSD-DT2022-Template\app" />
+              <option name="confDir" value="C:\Users\24956\Desktop\CardGame\app" />
               <option name="templateImports">
                 <list>
                   <option value="_root_.play.twirl.api.TwirlFeatureImports._" />
@@ -43,7 +43,7 @@
                   <option value="play.libs.F" />
                 </list>
               </option>
-              <option name="uri" value="/C:/Users/24956/Desktop/ITSD-DT2022-Template" />
+              <option name="uri" value="/C:/Users/24956/Desktop/CardGame" />
             </ProjectSettingsEntry>
           </value>
         </entry>
