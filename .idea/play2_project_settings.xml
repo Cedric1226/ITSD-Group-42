@@ -6,14 +6,15 @@
         <entry key="ITSD Card Game">
           <value>
             <ProjectSettingsEntry>
-              <option name="playDistrPath" value="$PROJECT_DIR$/null/Coursier/cache/v1/https/repo1.maven.org/maven2/com/typesafe/play/play_2.13/2.8.1/play_2.13-2.8.1.jar" />
+              <option name="playDistrPath" value="$USER_HOME$/Desktop/CardGame/null/Coursier/cache/v1/https/repo1.maven.org/maven2/com/typesafe/play/play_2.13/2.8.1/play_2.13-2.8.1.jar" />
             </ProjectSettingsEntry>
           </value>
         </entry>
         <entry key="root">
           <value>
             <ProjectSettingsEntry>
-              <option name="confDir" value="C:\Users\24956\Desktop\CardGame\app" />
+              <option name="sourceDir" value="C:\Users\24956\Desktop\CardGame\app" />
+              <option name="confDir" value="C:\Users\24956\Documents\GitHub\ITSD-Group-42\app" />
               <option name="templateImports">
                 <list>
                   <option value="_root_.play.twirl.api.TwirlFeatureImports._" />
@@ -43,7 +44,7 @@
                   <option value="play.libs.F" />
                 </list>
               </option>
-              <option name="uri" value="/C:/Users/24956/Desktop/CardGame" />
+              <option name="uri" value="/C:/Users/24956/Documents/GitHub/ITSD-Group-42" />
             </ProjectSettingsEntry>
           </value>
         </entry>

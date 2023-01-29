@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e77f740-633b-48ee-a04b-dad617d734d1" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/app/events/CardClicked.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/events/CardClicked.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/ITSD Card Game-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ITSD Card Game-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/play2_project_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/play2_project_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,6 +195,7 @@
       <workItem from="1674770438922" duration="199000" />
       <workItem from="1674819377252" duration="11665000" />
       <workItem from="1675008650420" duration="3612000" />
+      <workItem from="1675013612754" duration="44000" />
     </task>
     <servers />
   </component>
