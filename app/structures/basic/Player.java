@@ -32,7 +32,12 @@ public class Player {
 		return mana;
 	}
 	public void setMana(int mana) {
-		this.mana = mana;
+		if(mana<=9){
+			this.mana = mana;
+		}
+		else {
+			this.mana = 9;
+		}
 	}
 	
 	

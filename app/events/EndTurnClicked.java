@@ -3,6 +3,7 @@ package events;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import akka.actor.ActorRef;
+import commands.BasicCommands;
 import structures.GameState;
 
 /**
@@ -20,7 +21,13 @@ public class EndTurnClicked implements EventProcessor{
 
 	@Override
 	public void processEvent(ActorRef out, GameState gameState, JsonNode message) {
-		
+
+		gameState.turn+=1;
+		gameState.humanPlayer.setMana(gameState.turn+1);
+		gameState.aiPlayer.setMana(gameState.turn+1);
+
+		BasicCommands.setPlayer1Mana(out, gameState.humanPlayer);
+		BasicCommands.setPlayer2Mana(out, gameState.aiPlayer);
 	}
 
 }

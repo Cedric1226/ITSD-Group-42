@@ -25,16 +25,11 @@ public class Initalize implements EventProcessor{
 
 	@Override
 	public void processEvent(ActorRef out, GameState gameState, JsonNode message) {
-		// hello this is a change
-		
+
 		gameState.gameInitalised = true;
 		
 		gameState.something = true;
-		
-		// User 1 makes a change
-		//CommandDemo.executeDemo(out); // this executes the command demo, comment out this when implementing your solution
-		//CheckMoveLogic.executeDemo(out);
-		//MyDemo.executeDemo(out);
+
 
 		// initialize board
 		Board.initDisplayBoard(out,gameState.myBoard,0);
@@ -55,6 +50,7 @@ public class Initalize implements EventProcessor{
 		BasicCommands.setPlayer2Health(out, gameState.aiPlayer);
 		BasicCommands.setPlayer1Mana(out, gameState.humanPlayer);
 		BasicCommands.setPlayer2Mana(out, gameState.aiPlayer);
+
 	}
 
 }
