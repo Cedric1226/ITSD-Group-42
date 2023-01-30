@@ -1,4 +1,5 @@
 [debug] "not up to date. inChanged = true, force = false
 [debug] Updating ProjectRef(uri("file:/C:/Users/24956/Documents/GitHub/ITSD-Group-42/project/"), "itsd-group-42-build")...
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
 [debug] Done updating ProjectRef(uri("file:/C:/Users/24956/Documents/GitHub/ITSD-Group-42/project/"), "itsd-group-42-build")
 [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/24956/Desktop/CardGame/conf/routes
-// @DATE:Thu Jan 26 15:14:14 GMT 2023
+// @SOURCE:C:/Users/24956/Documents/GitHub/ITSD-Group-42/conf/routes
+// @DATE:Mon Jan 30 21:14:11 GMT 2023
 
 
 package router {
