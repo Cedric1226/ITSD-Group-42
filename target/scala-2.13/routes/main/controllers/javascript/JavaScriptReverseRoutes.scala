@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/24956/Documents/GitHub/ITSD-Group-42/conf/routes
-// @DATE:Mon Jan 30 21:14:11 GMT 2023
+// @DATE:Mon Jan 30 21:29:22 GMT 2023
 
 import play.api.routing.JavaScriptReverseRoute
 
