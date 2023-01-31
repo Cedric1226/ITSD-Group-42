@@ -98,8 +98,8 @@ public class Board {
         mode 1 indicates there is human's unit in (x, y)
         mode 2 indicates there is AI's unit in (x, y)
          */
-        int x = position.getXpos();
-        int y = position.getYpos();
+        int x = position.getTilex();
+        int y = position.getTiley();
         unitState[x][y] = mode;
     }
 
