@@ -37,6 +37,10 @@ public class Initalize implements EventProcessor{
 		// initialize player and AI avatar
 		gameState.humanAvatar.setPositionByTile(gameState.myBoard.chessBoard[1][2]);
 		gameState.aiAvatar.setPositionByTile(gameState.myBoard.chessBoard[7][2]);
+
+		gameState.myBoard.setUnitState(gameState.humanAvatar.getPosition(),1);
+		gameState.myBoard.setUnitState(gameState.aiAvatar.getPosition(),2);
+
 		BasicCommands.drawUnit(out, gameState.humanAvatar, gameState.myBoard.chessBoard[1][2]);
 		BasicCommands.drawUnit(out, gameState.aiAvatar, gameState.myBoard.chessBoard[7][2]);
 

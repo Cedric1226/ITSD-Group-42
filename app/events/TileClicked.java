@@ -35,11 +35,12 @@ public class TileClicked implements EventProcessor{
 		}
 
 		 */
+		if(gameState.myBoard.unitState[tilex][tiley]==1){
+			gameState.myBoard.calBoardState(tilex, tiley,1);
 
-		gameState.myBoard.calBoardState(tilex, tiley,1);
+			Board.displayBoard(out,gameState.myBoard,gameState.myBoard.boardState);
+		}
 
-		Board.displayBoard(out,gameState.myBoard,gameState.myBoard.boardState);
-		
 	}
 
 }
