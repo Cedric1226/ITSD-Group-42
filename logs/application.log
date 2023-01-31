@@ -1,38 +1,28 @@
-2023-01-30 23:11:33,655 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-6 - Slf4jLogger started
-2023-01-30 23:11:33,726 [INFO] from org.hibernate.validator.internal.util.Version in play-dev-mode-akka.actor.default-dispatcher-7 - HV000001: Hibernate Validator 6.1.0.Final
-2023-01-30 23:11:33,803 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2023-01-31 11:38:12,264 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-9 - Slf4jLogger started
+2023-01-31 11:38:12,337 [INFO] from org.hibernate.validator.internal.util.Version in play-dev-mode-akka.actor.default-dispatcher-4 - HV000001: Hibernate Validator 6.1.0.Final
+2023-01-31 11:38:12,420 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
-2023-01-30 23:11:33,805 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev) (no global state)
-2023-01-30 23:14:16,199 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-7 - Slf4jLogger started
-2023-01-30 23:14:16,230 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2023-01-30 23:14:16,232 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev) (no global state)
-2023-01-30 23:14:35,855 [ERROR] from akka.stream.impl.ActorRefSource in application-akka.actor.default-dispatcher-17 - Failing because buffer is full and overflowStrategy is: [Fail] in stream [actorRefSource]
-2023-01-30 23:14:35,857 [ERROR] from play.core.server.common.WebSocketFlowHandler in play-dev-mode-akka.actor.default-dispatcher-10 - WebSocket flow threw exception
-akka.stream.BufferOverflowException: Buffer overflow (max capacity was: 16)!
-	at akka.stream.impl.ActorRefSource$$anon$1.$anonfun$ref$1(ActorRefSource.scala:132)
-	at akka.stream.impl.ActorRefSource$$anon$1.$anonfun$ref$1$adapted(ActorRefSource.scala:56)
-	at akka.stream.stage.GraphStageLogic$StageActor.internalReceive(GraphStage.scala:243)
-	at akka.stream.stage.GraphStageLogic$StageActor.$anonfun$callback$1(GraphStage.scala:202)
-	at akka.stream.stage.GraphStageLogic$StageActor.$anonfun$callback$1$adapted(GraphStage.scala:202)
-	at akka.stream.impl.fusing.GraphInterpreter.runAsyncInput(GraphInterpreter.scala:466)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:497)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
+2023-01-31 11:38:12,423 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev) (no global state)
+2023-01-31 11:38:13,994 [ERROR] from akka.actor.OneForOneStrategy in application-akka.actor.default-dispatcher-20 - 530
+java.lang.ArrayIndexOutOfBoundsException: 530
+	at structures.Board.setUnitState(Board.java:103)
+	at events.Initalize.processEvent(Initalize.java:41)
+	at actors.GameActor.processMessage(GameActor.java:110)
+	at actors.GameActor.lambda$createReceive$0(GameActor.java:90)
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:24)
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:20)
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:187)
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:186)
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:20)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:241)
 	at akka.actor.Actor.aroundReceive(Actor.scala:534)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:220)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
