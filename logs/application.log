@@ -1,34 +1,10 @@
-2023-01-31 11:38:12,264 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-9 - Slf4jLogger started
-2023-01-31 11:38:12,337 [INFO] from org.hibernate.validator.internal.util.Version in play-dev-mode-akka.actor.default-dispatcher-4 - HV000001: Hibernate Validator 6.1.0.Final
-2023-01-31 11:38:12,420 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2023-01-31 11:41:48,296 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-5 - Slf4jLogger started
+2023-01-31 11:41:48,367 [INFO] from org.hibernate.validator.internal.util.Version in play-dev-mode-akka.actor.default-dispatcher-8 - HV000001: Hibernate Validator 6.1.0.Final
+2023-01-31 11:41:48,466 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
-2023-01-31 11:38:12,423 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev) (no global state)
-2023-01-31 11:38:13,994 [ERROR] from akka.actor.OneForOneStrategy in application-akka.actor.default-dispatcher-20 - 530
-java.lang.ArrayIndexOutOfBoundsException: 530
-	at structures.Board.setUnitState(Board.java:103)
-	at events.Initalize.processEvent(Initalize.java:41)
-	at actors.GameActor.processMessage(GameActor.java:110)
-	at actors.GameActor.lambda$createReceive$0(GameActor.java:90)
-	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:24)
-	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:20)
-	at scala.PartialFunction.applyOrElse(PartialFunction.scala:187)
-	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:186)
-	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:20)
-	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:241)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:220)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+2023-01-31 11:41:48,469 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev) (no global state)
