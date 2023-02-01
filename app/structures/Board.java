@@ -84,6 +84,7 @@ public class Board {
         if(x+2<=8){
             boardState[x+2][y] = mode;
         }
+        boardState[x][y] = 0;
     }
 
     // used to refresh boardState to 0

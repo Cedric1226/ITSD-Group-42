@@ -49,17 +49,33 @@ public class TileClicked implements EventProcessor{
 			}
 		}
 		else {
-			if(tilex==gameState.myBoard.lastSelectedX && tiley==gameState.myBoard.lastSelectedY){
+			if (gameState.myBoard.unitState[tilex][tiley] == 0 && gameState.myBoard.boardState[tilex][tiley]==1) {
 
-			}
-			else if (gameState.myBoard.unitState[gameState.myBoard.lastSelectedX][gameState.myBoard.lastSelectedY] == 1
-			&& gameState.myBoard.unitState[tilex][tiley] == 0 && gameState.myBoard.boardState[tilex][tiley]==1) {
+				Board.freshDisplayBoard(out,gameState.myBoard,gameState.myBoard.boardState);
+				gameState.myBoard.freshBoardState();
 
 				gameState.myBoard.setUnitState(gameState.humanAvatar.getPosition(),0);
 				BasicCommands.moveUnitToTile(out, gameState.humanAvatar, gameState.myBoard.chessBoard[tilex][tiley]);
 				gameState.humanAvatar.setPositionByTile(gameState.myBoard.chessBoard[tilex][tiley]);
 				gameState.myBoard.setUnitState(gameState.humanAvatar.getPosition(),1);
-				
+
+				gameState.tileSelected = false;
+			}
+			else if(gameState.myBoard.unitState[tilex][tiley] == 1){
+				gameState.tileSelected = true;
+				gameState.myBoard.lastSelectedX = tilex;
+				gameState.myBoard.lastSelectedY = tiley;
+
+				gameState.myBoard.freshBoardState();
+				gameState.myBoard.calBoardState(tilex, tiley,1);
+
+				Board.displayBoard(out,gameState.myBoard,gameState.myBoard.boardState);
+
+			}
+			else if(gameState.myBoard.unitState[tilex][tiley] == 0 && gameState.myBoard.boardState[tilex][tiley]==0){
+				Board.freshDisplayBoard(out,gameState.myBoard,gameState.myBoard.boardState);
+				gameState.myBoard.freshBoardState();
+				gameState.tileSelected = false;
 			}
 		}
 
