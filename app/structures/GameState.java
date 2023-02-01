@@ -20,6 +20,8 @@ public class GameState {
 	
 	public boolean something = false;
 
+	public boolean tileSelected = false;
+
 	public int turn = 1;
 
 	//game board

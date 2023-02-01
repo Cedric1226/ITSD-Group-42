@@ -22,6 +22,8 @@ public class EndTurnClicked implements EventProcessor{
 	@Override
 	public void processEvent(ActorRef out, GameState gameState, JsonNode message) {
 
+		gameState.tileSelected = false;
+
 		gameState.turn+=1;
 		gameState.humanPlayer.setMana(gameState.turn+1);
 		gameState.aiPlayer.setMana(gameState.turn+1);

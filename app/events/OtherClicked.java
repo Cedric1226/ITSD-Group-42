@@ -22,9 +22,12 @@ public class OtherClicked implements EventProcessor{
 
 	@Override
 	public void processEvent(ActorRef out, GameState gameState, JsonNode message) {
-		//BasicCommands.addPlayer1Notification(out, "hello" + gameState.something, 2);
+
+		gameState.tileSelected = false;
+
 		Board.freshDisplayBoard(out,gameState.myBoard,gameState.myBoard.boardState);
 		gameState.myBoard.freshBoardState();
+
 	}
 
 }

@@ -4,6 +4,7 @@ package events;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import akka.actor.ActorRef;
+import commands.BasicCommands;
 import structures.Board;
 import structures.GameState;
 
@@ -35,10 +36,31 @@ public class TileClicked implements EventProcessor{
 		}
 
 		 */
-		if(gameState.myBoard.unitState[tilex][tiley]==1){
-			gameState.myBoard.calBoardState(tilex, tiley,1);
+		if(!gameState.tileSelected){
 
-			Board.displayBoard(out,gameState.myBoard,gameState.myBoard.boardState);
+			gameState.tileSelected = true;
+			gameState.myBoard.lastSelectedX = tilex;
+			gameState.myBoard.lastSelectedY = tiley;
+
+			if(gameState.myBoard.unitState[tilex][tiley]==1){
+				gameState.myBoard.calBoardState(tilex, tiley,1);
+
+				Board.displayBoard(out,gameState.myBoard,gameState.myBoard.boardState);
+			}
+		}
+		else {
+			if(tilex==gameState.myBoard.lastSelectedX && tiley==gameState.myBoard.lastSelectedY){
+
+			}
+			else if (gameState.myBoard.unitState[gameState.myBoard.lastSelectedX][gameState.myBoard.lastSelectedY] == 1
+			&& gameState.myBoard.unitState[tilex][tiley] == 0 && gameState.myBoard.boardState[tilex][tiley]==1) {
+
+				gameState.myBoard.setUnitState(gameState.humanAvatar.getPosition(),0);
+				BasicCommands.moveUnitToTile(out, gameState.humanAvatar, gameState.myBoard.chessBoard[tilex][tiley]);
+				gameState.humanAvatar.setPositionByTile(gameState.myBoard.chessBoard[tilex][tiley]);
+				gameState.myBoard.setUnitState(gameState.humanAvatar.getPosition(),1);
+				
+			}
 		}
 
 	}

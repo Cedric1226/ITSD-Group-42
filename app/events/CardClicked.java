@@ -23,6 +23,8 @@ public class CardClicked implements EventProcessor{
 
 	@Override
 	public void processEvent(ActorRef out, GameState gameState, JsonNode message) {
+
+		gameState.tileSelected = false;
 		
 		int handPosition = message.get("position").asInt();
 		//BasicCommands.addPlayer1Notification(out, "hello" + handPosition, 2);

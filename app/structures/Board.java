@@ -11,6 +11,10 @@ public class Board {
     public int[][] unitState = new int[9][5];
     public int[][] boardState = new int[9][5];
 
+    public int lastSelectedX;
+
+    public int lastSelectedY;
+
     public Board(){
         for(int x=0;x<=8;x++){
             for(int y=0;y<=4;y++){
