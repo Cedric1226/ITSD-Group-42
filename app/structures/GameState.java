@@ -36,5 +36,6 @@ public class GameState {
 
 	// AI and human player
 	public Player humanPlayer = new Player(20, 2);
+
 	public Player aiPlayer = new Player(20, 2);
 }
