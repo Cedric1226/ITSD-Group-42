@@ -8,3 +8,6 @@
     play.filters.csrf.CSRFFilter
 
 2023-02-01 14:39:54,481 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev) (no global state)
+2023-02-01 20:04:46,853 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-shutdown-hook-1 - Stopping Akka HTTP server...
+2023-02-01 20:04:46,857 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-akka.actor.internal-dispatcher-23 - Terminating server binding for /0:0:0:0:0:0:0:0:9000
+2023-02-01 20:04:46,873 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-akka.actor.internal-dispatcher-23 - Running provided shutdown stop hooks
