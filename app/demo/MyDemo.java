@@ -34,24 +34,25 @@ public class MyDemo {
 
         /*
         draw human and AI avatar
-         */
-        Unit humanAvatar = BasicObjectBuilders.loadUnit(StaticConfFiles.humanAvatar, 0, Unit.class);
-        Unit aiAvatar = BasicObjectBuilders.loadUnit(StaticConfFiles.aiAvatar, 0, Unit.class);
-        humanAvatar.setPositionByTile(chessBoard[1][2]);
-        aiAvatar.setPositionByTile(chessBoard[7][2]);
-        BasicCommands.drawUnit(out, humanAvatar, chessBoard[1][2]);
-        BasicCommands.drawUnit(out, aiAvatar, chessBoard[7][2]); //chessBoard[7][2] ?
 
-        /*
-        draw cards
+        Unit humanAvatar = BasicObjectBuilders.loadUnit(StaticConfFiles.humanAvatar, 0, Unit.class);
+        humanAvatar.setPositionByTile(chessBoard[1][2]);
+        BasicCommands.setUnitAttack(out, humanAvatar, 20);
+        BasicCommands.drawUnit(out, humanAvatar, chessBoard[1][2]);
+
          */
-        Card hailstone_golem = BasicObjectBuilders.loadCard(StaticConfFiles.c_hailstone_golem, 0, Card.class);
-        BasicCommands.drawCard(out, hailstone_golem, 1, 0);
-        BasicCommands.drawCard(out, hailstone_golem, 2, 0);
-        BasicCommands.drawCard(out, hailstone_golem, 3, 0);
-        BasicCommands.drawCard(out, hailstone_golem, 4, 0);
-        BasicCommands.drawCard(out, hailstone_golem, 5, 0);
-        BasicCommands.drawCard(out, hailstone_golem, 6, 0);
+
+        BasicCommands.addPlayer1Notification(out, "drawUnit", 2);
+        Unit unit = BasicObjectBuilders.loadUnit(StaticConfFiles.humanAvatar, 0, Unit.class);
+        unit.setPositionByTile(chessBoard[1][2]);
+        BasicCommands.drawUnit(out, unit, chessBoard[1][2]);
+        try {Thread.sleep(44);} catch (InterruptedException e) {e.printStackTrace();}
+
+        // setUnitAttack
+        BasicCommands.addPlayer1Notification(out, "setUnitAttack", 2);
+        BasicCommands.setUnitAttack(out, unit, 2);
+
+
 
     }
 }

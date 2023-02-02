@@ -56,7 +56,7 @@ public class Initalize implements EventProcessor{
 		BasicCommands.setPlayer2Mana(out, gameState.aiPlayer);
 
  */
-		CommandDemo.executeDemo(out);
+		MyDemo.executeDemo(out);
 	}
 
 }
