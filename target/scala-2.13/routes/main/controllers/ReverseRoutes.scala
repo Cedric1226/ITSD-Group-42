@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/24956/Documents/GitHub/ITSD-Group-42/conf/routes
-// @DATE:Thu Feb 02 15:38:42 GMT 2023
+// @DATE:Thu Feb 02 16:15:53 GMT 2023
 
 import play.api.mvc.Call
 

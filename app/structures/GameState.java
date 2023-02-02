@@ -27,12 +27,16 @@ public class GameState {
 	//game board
 	public Board myBoard = new Board();
 
+	//Player's card deck
+	public Hand myHand = new Hand(0);
+
+	//AI's card deck
+	public Hand aiHand = new Hand(1);
+
 	//human and AI avatar
 	public Unit humanAvatar = BasicObjectBuilders.loadUnit(StaticConfFiles.humanAvatar, 0, Unit.class);
 	public Unit aiAvatar = BasicObjectBuilders.loadUnit(StaticConfFiles.aiAvatar, 1, Unit.class);
 
-	// card hailstone_golem
-	public Card hailstone_golem = BasicObjectBuilders.loadCard(StaticConfFiles.c_hailstone_golem, 0, Card.class);
 
 	// AI and human player
 	public Player humanPlayer = new Player(20, 2);
