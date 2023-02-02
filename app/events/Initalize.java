@@ -30,7 +30,7 @@ public class Initalize implements EventProcessor{
 		
 		gameState.something = true;
 
-/*
+
 		// initialize board
 		Board.initDisplayBoard(out,gameState.myBoard,0);
 
@@ -55,8 +55,8 @@ public class Initalize implements EventProcessor{
 		BasicCommands.setPlayer1Mana(out, gameState.humanPlayer);
 		BasicCommands.setPlayer2Mana(out, gameState.aiPlayer);
 
- */
-		MyDemo.executeDemo(out);
+
+		//MyDemo.executeDemo(out);
 	}
 
 }
