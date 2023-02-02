@@ -41,30 +41,31 @@ public class TileClicked implements EventProcessor{
 		 */
 		if(!gameState.tileSelected){
 
-			gameState.tileSelected = true;
-			gameState.myBoard.lastSelectedX = tilex;
-			gameState.myBoard.lastSelectedY = tiley;
 
-			if(gameState.myBoard.unitState[tilex][tiley]==1){
+			if(gameState.myBoard.unitIDs[tilex][tiley]>=0 & gameState.myBoard.unitIDs[tilex][tiley]<=19){
+				gameState.tileSelected = true;
+				gameState.myBoard.lastSelectedX = tilex;
+				gameState.myBoard.lastSelectedY = tiley;
+
 				gameState.myBoard.calBoardState(tilex, tiley,1);
 
 				Board.displayBoard(out,gameState.myBoard,gameState.myBoard.boardState);
 			}
 		}
 		else {
-			if (gameState.myBoard.unitState[tilex][tiley] == 0 && gameState.myBoard.boardState[tilex][tiley]==1) {
+			if (gameState.myBoard.boardState[tilex][tiley]==1) {
 
 				Board.freshDisplayBoard(out,gameState.myBoard,gameState.myBoard.boardState);
 				gameState.myBoard.freshBoardState();
 
-				gameState.myBoard.setUnitState(gameState.humanAvatar.getPosition(),0);
+				gameState.myBoard.setUnitIDs(gameState.humanAvatar.getPosition(),-1);
 				BasicCommands.moveUnitToTile(out, gameState.humanAvatar, gameState.myBoard.chessBoard[tilex][tiley]);
 				gameState.humanAvatar.setPositionByTile(gameState.myBoard.chessBoard[tilex][tiley]);
-				gameState.myBoard.setUnitState(gameState.humanAvatar.getPosition(),1);
+				gameState.myBoard.setUnitIDs(gameState.humanAvatar.getPosition(),gameState.humanAvatar.getId());
 
 				gameState.tileSelected = false;
 			}
-			else if(gameState.myBoard.unitState[tilex][tiley] == 1){
+			else if(gameState.myBoard.unitIDs[tilex][tiley]>=0 & gameState.myBoard.unitIDs[tilex][tiley]<=19){
 				gameState.tileSelected = true;
 				gameState.myBoard.lastSelectedX = tilex;
 				gameState.myBoard.lastSelectedY = tiley;
@@ -75,7 +76,7 @@ public class TileClicked implements EventProcessor{
 				Board.displayBoard(out,gameState.myBoard,gameState.myBoard.boardState);
 
 			}
-			else if(gameState.myBoard.unitState[tilex][tiley] == 0 && gameState.myBoard.boardState[tilex][tiley]==0){
+			else{
 				Board.freshDisplayBoard(out,gameState.myBoard,gameState.myBoard.boardState);
 				gameState.myBoard.freshBoardState();
 				gameState.tileSelected = false;

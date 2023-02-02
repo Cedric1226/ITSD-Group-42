@@ -34,8 +34,8 @@ public class GameState {
 	public Hand aiHand = new Hand(1);
 
 	//human and AI avatar
-	public Unit humanAvatar = BasicObjectBuilders.loadUnit(StaticConfFiles.humanAvatar, 0, Unit.class);
-	public Unit aiAvatar = BasicObjectBuilders.loadUnit(StaticConfFiles.aiAvatar, 1, Unit.class);
+	public Unit humanAvatar = BasicObjectBuilders.loadUnit(StaticConfFiles.humanAvatar, 4, Unit.class);
+	public Unit aiAvatar = BasicObjectBuilders.loadUnit(StaticConfFiles.aiAvatar, 32, Unit.class);
 
 
 	// AI and human player
