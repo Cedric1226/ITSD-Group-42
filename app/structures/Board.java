@@ -65,7 +65,9 @@ public class Board {
         for (int i=x-1; i<=x+1; i++){
             for(int j=y-1; j<=y+1; j++){
                 if(i>=0 & i<=8 & j>=0 & j<=4){
-                    boardState[i][j] = mode;
+                    if(unitState[i][j] == 0){
+                        boardState[i][j] = mode;
+                    }
                 }
                 else {
                     continue;
@@ -73,16 +75,27 @@ public class Board {
             }
         }
         if(y-2>=0){
-            boardState[x][y-2] = mode;
+            if(unitState[x][y-2] == 0){
+                boardState[x][y-2] = mode;
+            }
         }
         if(y+2<=4){
-            boardState[x][y+2] = mode;
+            if(unitState[x][y+2] == 0){
+                boardState[x][y+2] = mode;
+            }
+
         }
         if(x-2>=0){
-            boardState[x-2][y] = mode;
+            if(unitState[x-2][y] == 0){
+                boardState[x-2][y] = mode;
+            }
+
         }
         if(x+2<=8){
-            boardState[x+2][y] = mode;
+            if(unitState[x+2][y] == 0){
+                boardState[x+2][y] = mode;
+            }
+
         }
         boardState[x][y] = 0;
     }

@@ -6,6 +6,7 @@ import akka.actor.ActorRef;
 import commands.BasicCommands;
 import structures.Board;
 import structures.GameState;
+import structures.Hand;
 
 /**
  * Indicates that the user has clicked an object on the game canvas, in this case
@@ -28,6 +29,8 @@ public class OtherClicked implements EventProcessor{
 		Board.freshDisplayBoard(out,gameState.myBoard,gameState.myBoard.boardState);
 		gameState.myBoard.freshBoardState();
 
+		Hand.initDisplayHand(out, gameState);
+		gameState.myHand.freshCardState();
 	}
 
 }

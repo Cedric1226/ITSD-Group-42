@@ -7,6 +7,7 @@ import akka.actor.ActorRef;
 import commands.BasicCommands;
 import structures.Board;
 import structures.GameState;
+import structures.Hand;
 
 /**
  * Indicates that the user has clicked an object on the game canvas, in this case a tile.
@@ -26,6 +27,8 @@ public class TileClicked implements EventProcessor{
 
 	@Override
 	public void processEvent(ActorRef out, GameState gameState, JsonNode message) {
+
+		Hand.initDisplayHand(out, gameState);
 
 		int tilex = message.get("tilex").asInt();
 		int tiley = message.get("tiley").asInt();
