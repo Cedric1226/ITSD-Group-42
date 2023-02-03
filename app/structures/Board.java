@@ -8,7 +8,7 @@ import utils.BasicObjectBuilders;
 
 public class Board {
     public Tile[][] chessBoard = new Tile[9][5];
-    public int[][] unitState = new int[9][5];
+    public int[][] unitIDs = new int[9][5];
     public int[][] boardState = new int[9][5];
 
     public int lastSelectedX;
@@ -21,6 +21,13 @@ public class Board {
                 chessBoard[x][y] = BasicObjectBuilders.loadTile(x, y);
             }
         }
+
+        for(int x=0;x<=8;x++){
+            for(int y=0;y<=4;y++){
+                unitIDs[x][y] = -1;
+            }
+        }
+
     }
 
     // used to display initial board
@@ -62,50 +69,65 @@ public class Board {
 
     // used to update boardState according to input (x, y)
     public void calBoardState(int x, int y, int mode){
-        for (int i=x-1; i<=x+1; i++){
-            for(int j=y-1; j<=y+1; j++){
-                if(i>=0 & i<=8 & j>=0 & j<=4){
-                    boardState[i][j] = mode;
-                }
-                else {
-                    continue;
+        for (int i=x-2; i<=x+2; i++){
+            for(int j=y-2; j<=y+2; j++){
+                if(i>=0 & i<=8 & j>=0 & j<=4 & Math.abs(i-x)+Math.abs(j-y)<=2){
+                    if(unitIDs[i][j] == -1){
+                        boardState[i][j] = mode;
+                    }
                 }
             }
         }
-        if(y-2>=0){
-            boardState[x][y-2] = mode;
-        }
-        if(y+2<=4){
-            boardState[x][y+2] = mode;
-        }
-        if(x-2>=0){
-            boardState[x-2][y] = mode;
-        }
-        if(x+2<=8){
-            boardState[x+2][y] = mode;
-        }
         boardState[x][y] = 0;
+
+        for (int i=x-1; i<=x+1; i++){
+            for(int j=y-1; j<=y+1; j++){
+                if(i>=0 & i<=8 & j>=0 & j<=4){
+                    if(unitIDs[i][j] >19){
+                        boardState[i][j] = 2;
+                    }
+                }
+            }
+        }
+
+
+
+    }
+
+    // used to update boardState to realize card using and attack
+    public void calBoardState(int x, int y){
+        for (int i=x-1; i<=x+1; i++){
+            for(int j=y-1; j<=y+1; j++){
+                if(i>=0 & i<=8 & j>=0 & j<=4){
+                    if(unitIDs[i][j] == 0) {
+                        boardState[i][j] = 1;
+                    }
+                }
+            }
+        }
     }
 
     // used to refresh boardState to 0
     public void freshBoardState(){
         for(int x=0;x<=8;x++){
             for(int y=0;y<=4;y++){
-                boardState[x][y] = 0;
+                boardState[x][y] = -1;
             }
         }
     }
 
     //
-    public void setUnitState(Position position, int mode){
+    public void setUnitIDs(Position position, int unitID){
         /*
-        mode 0 indicates there is no unit in (x, y)
-        mode 1 indicates there is human's unit in (x, y)
-        mode 2 indicates there is AI's unit in (x, y)
+        ID 4 indicates human's avatar
+        ID 32 indicates AI's avatar
+        ID -1 indicates there is no unit in (x, y)
+        ID 0-19 indicates there is human's unit in (x, y)
+        ID 20-39 indicates there is AI's unit in (x, y)
          */
         int x = position.getTilex();
         int y = position.getTiley();
-        unitState[x][y] = mode;
+        this.unitIDs[x][y] = unitID;
     }
 
 

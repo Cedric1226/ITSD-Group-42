@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import akka.actor.ActorRef;
 import commands.BasicCommands;
 import structures.GameState;
+import structures.Hand;
 
 /**
  * Indicates that the user has clicked an object on the game canvas, in this case a card.
@@ -28,7 +29,11 @@ public class CardClicked implements EventProcessor{
 		
 		int handPosition = message.get("position").asInt();
 		//BasicCommands.addPlayer1Notification(out, "hello" + handPosition, 2);
-		
+		Hand.initDisplayHand(out, gameState);
+
+		gameState.myHand.freshCardState();
+
+		Hand.highlightDisplayHand(out,gameState,handPosition);
 	}
 
 }

@@ -4,11 +4,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 import akka.actor.ActorRef;
 import commands.BasicCommands;
-import demo.CheckMoveLogic;
-import demo.CommandDemo;
-import demo.MyDemo;
 import structures.Board;
 import structures.GameState;
+import structures.Hand;
 
 /**
  * Indicates that both the core game loop in the browser is starting, meaning
@@ -38,22 +36,28 @@ public class Initalize implements EventProcessor{
 		gameState.humanAvatar.setPositionByTile(gameState.myBoard.chessBoard[1][2]);
 		gameState.aiAvatar.setPositionByTile(gameState.myBoard.chessBoard[7][2]);
 
-		gameState.myBoard.setUnitState(gameState.humanAvatar.getPosition(),1);
-		gameState.myBoard.setUnitState(gameState.aiAvatar.getPosition(),2);
+		gameState.myBoard.setUnitIDs(gameState.humanAvatar.getPosition(),4);
+		gameState.myBoard.setUnitIDs(gameState.aiAvatar.getPosition(),32);
 
 		BasicCommands.drawUnit(out, gameState.humanAvatar, gameState.myBoard.chessBoard[1][2]);
 		BasicCommands.drawUnit(out, gameState.aiAvatar, gameState.myBoard.chessBoard[7][2]);
 
+		try {Thread.sleep(50);} catch (InterruptedException e) {e.printStackTrace();}			// I don't know why but Thread.sleep is compulsory here
+		BasicCommands.setUnitAttack(out, gameState.humanAvatar, 2);
+		BasicCommands.setUnitHealth(out, gameState.humanAvatar, gameState.humanPlayer.getHealth());
+		BasicCommands.setUnitAttack(out, gameState.aiAvatar, 2);
+		BasicCommands.setUnitHealth(out, gameState.aiAvatar, gameState.aiPlayer.getHealth());
+
 		// initialize player's hand
-		BasicCommands.drawCard(out, gameState.hailstone_golem, 1, 0);
-		BasicCommands.drawCard(out, gameState.hailstone_golem, 2, 0);
-		BasicCommands.drawCard(out, gameState.hailstone_golem, 3, 0);
+		Hand.initDisplayHand(out, gameState);
+
 
 		// initialize player's mana and health
 		BasicCommands.setPlayer1Health(out, gameState.humanPlayer);
 		BasicCommands.setPlayer2Health(out, gameState.aiPlayer);
 		BasicCommands.setPlayer1Mana(out, gameState.humanPlayer);
 		BasicCommands.setPlayer2Mana(out, gameState.aiPlayer);
+
 
 	}
 
